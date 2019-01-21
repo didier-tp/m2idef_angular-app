@@ -14,7 +14,7 @@ export class TvaComponent implements OnInit {
 
   calculer(): void {
     this.tva = this.ht * this.taux / 100;
-    this.ttc = this.ht + this.tva;
+    this.ttc = Number(this.ht) + Number(this.tva);
   }
 
   constructor() { }

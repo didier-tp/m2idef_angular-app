@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TvaComponent } from './tva/tva.component';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,7 +12,7 @@ import { TvaComponent } from './tva/tva.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule , FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
