@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { TvaComponent } from './tva/tva.component';
 import { FormsModule } from '@angular/forms';
 import { EmpruntComponent } from './emprunt/emprunt.component';
+import { CompteComponent } from './compte/compte.component';
 @NgModule({
   declarations: [
     AppComponent,
     TvaComponent,
-    EmpruntComponent
+    EmpruntComponent,
+    CompteComponent
   ],
   imports: [
     BrowserModule,
