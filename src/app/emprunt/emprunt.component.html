@@ -1,5 +1,7 @@
 <h3>calcul mensualite emprunt</h3>
-montant : <input [(ngModel)]="calculEmprunt.montant" /><br/>
+montant : <input [(ngModel)]="calculEmprunt.montant"
+            [class.positif]="calculEmprunt.montant > 0"
+            [class.negatif]="calculEmprunt.montant < 0" /><br/>
 <!--
 duree :<input [(ngModel)]="calculEmprunt.duree" /> <br/>
 -->
