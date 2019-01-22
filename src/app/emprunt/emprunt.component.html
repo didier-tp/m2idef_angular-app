@@ -1,0 +1,7 @@
+<h3>calcul mensualite emprunt</h3>
+montant : <input [(ngModel)]="calculEmprunt.montant" /><br/>
+duree :<input [(ngModel)]="calculEmprunt.duree" /> <br/>
+taux: <input [(ngModel)]="calculEmprunt.taux" /> <br/>
+<input type="button" value="calculer mensualite" 
+       (click)="calculerEmprunt()" /> <br />
+mensualite : {{calculEmprunt.mensualite}} <br/>
