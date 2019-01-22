@@ -1,6 +1,11 @@
 <h3>calcul mensualite emprunt</h3>
 montant : <input [(ngModel)]="calculEmprunt.montant" /><br/>
+<!--
 duree :<input [(ngModel)]="calculEmprunt.duree" /> <br/>
+-->
+duree : <select [(ngModel)]="calculEmprunt.duree">
+      <option *ngFor="let i of [1,2,3,4,5,6,8,10,12,15,20]">{{i}}</option>
+</select> <br/>
 taux: <input [(ngModel)]="calculEmprunt.taux" /> <br/>
 <input type="button" value="calculer mensualite" 
        (click)="calculerEmprunt()" /> <br />
