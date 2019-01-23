@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { EmpruntComponent } from './emprunt/emprunt.component';
 import { CompteComponent } from './compte/compte.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CompteService } from './compte.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule, FormsModule, HttpClientModule
   ],
-  providers: [],
+  providers: [CompteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

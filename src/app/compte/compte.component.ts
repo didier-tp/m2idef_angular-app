@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Compte } from '../compte';
-import { HttpClient , HttpHeaders} from '@angular/common/http';
+import { CompteService } from '../compte.service';
 
 @Component({
   selector: 'app-compte',
@@ -12,25 +12,19 @@ export class CompteComponent implements OnInit {
   // compte : object = { };
   // compte: object = { numero: null , label : "c" , solde : 50.0};
   message: string = "";
-  private _headers = new HttpHeaders({ 'Content-Type': 'application/json' });
 
-  constructor(private http: HttpClient) { }
+  constructor(private compteService: CompteService) { }
 
   ajouterCompte(): void {
-    this.message = "compte=" + JSON.stringify(this.compte);
-    //appel WS REST:
-    let urlWs = "./rest/compte";
-    //NB: URL ici relative qui commence par "./rest" ou "rest"
-    //et qui sera préfixée par
-    //http://localhost:8080/appliSpringBoot selon le
-    //fichier proxy.conf.json (ng serve --proxy-config ...)
-    this.http.post<Compte>(urlWs, 
-                           this.compte, 
-                           { headers: this._headers }
-                           ).subscribe( result => console.log(result));
+    this.message = "compte saisi=" + JSON.stringify(this.compte);
+   this.compteService
+    .postCompteViaWsRest(this.compte)
+    .subscribe( (result) => { console.log(result); 
+                              let compteEnregistre  = result;
+                             this.message = "compte enregistre="
+                               + JSON.stringify(compteEnregistre);
+                            });
   }
-
-  
 
   ngOnInit() {
   }
