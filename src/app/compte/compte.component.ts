@@ -10,6 +10,12 @@ export class CompteComponent implements OnInit {
 
   compte: Compte = new Compte();
 
+  message: string = "";
+
+  ajouterCompte(): void {
+    this.message = "compte=" + JSON.stringify(this.compte);
+  }
+
   constructor() { }
 
   ngOnInit() {
