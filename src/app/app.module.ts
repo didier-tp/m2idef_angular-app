@@ -7,6 +7,7 @@ import { TvaComponent } from './tva/tva.component';
 import { FormsModule } from '@angular/forms';
 import { EmpruntComponent } from './emprunt/emprunt.component';
 import { CompteComponent } from './compte/compte.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,7 @@ import { CompteComponent } from './compte/compte.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule , FormsModule
+    AppRoutingModule, FormsModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
