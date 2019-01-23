@@ -9,11 +9,14 @@ import { Compte } from '../compte';
 export class CompteComponent implements OnInit {
 
   compte: Compte = new Compte();
+  // compte : object = { };
+  // compte: object = { numero: null , label : "c" , solde : 50.0};
 
   message: string = "";
 
   ajouterCompte(): void {
     this.message = "compte=" + JSON.stringify(this.compte);
+    //+ futur appel WS REST
   }
 
   constructor() { }
