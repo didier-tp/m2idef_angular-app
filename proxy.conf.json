@@ -1,0 +1,6 @@
+{
+    "/rest": {
+        "secure": "false",
+        "target": "http://localhost:8080/appliSpringBoot"
+    }
+}
