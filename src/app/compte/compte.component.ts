@@ -18,7 +18,16 @@ export class CompteComponent implements OnInit {
 
   ajouterCompte(): void {
     this.message = "compte=" + JSON.stringify(this.compte);
-    //+ futur appel WS REST
+    //appel WS REST:
+    let urlWs = "./rest/compte";
+    //NB: URL ici relative qui commence par "./rest" ou "rest"
+    //et qui sera préfixée par
+    //http://localhost:8080/appliSpringBoot selon le
+    //fichier proxy.conf.json (ng serve --proxy-config ...)
+    this.http.post<Compte>(urlWs, 
+                           this.compte, 
+                           { headers: this._headers }
+                           ).subscribe( result => console.log(result));
   }
 
   
