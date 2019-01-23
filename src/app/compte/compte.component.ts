@@ -24,6 +24,9 @@ export class CompteComponent implements OnInit {
                              this.message = "compte enregistre="
                                + JSON.stringify(compteEnregistre);
                             });
+    // choseObservable.subscribe( fonctionCallBack_declenchée_en_différé )
+    // NB: la callback asynchrone/non bloquante peut être exprimée
+    // sous forme de lambda (alias "arrow function").
   }
 
   ngOnInit() {
