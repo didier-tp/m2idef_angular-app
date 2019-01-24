@@ -25,4 +25,16 @@ export class CompteService {
         //depuis la version 4.3 de angular , http.post<T>
         //ou bien http.get<T> renvoie un resultat de type Observable<T>
   }
+
+  public getComptesViaWsRest(): Observable<Compte[]> {
+    //appel WS REST:
+    let urlWs = "./rest/compte";
+    //NB: URL ici relative qui commence par "./rest" ou "rest"
+    //et qui sera préfixée par
+    //http://localhost:8080/appliSpringBoot selon le
+    //fichier proxy.conf.json (ng serve --proxy-config ...)
+    return this.http.get<Compte[]>(urlWs);
+    //depuis la version 4.3 de angular , http.post<T>
+    //ou bien http.get<T> renvoie un resultat de type Observable<T>
+  }
 }

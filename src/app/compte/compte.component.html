@@ -13,4 +13,16 @@
 <hr/>
 {{message}}
 <hr/>
-future liste des comptes
+<h3>liste des comptes</h3>
+<table border="1">
+   <tr>
+        <th>numero</th>
+        <th>label</th>
+        <th>solde</th>
+  </tr>
+   <tr *ngFor="let cpt of tabComptes">
+        <td>{{cpt.numero}}</td>
+        <td>{{cpt.label}}</td>
+        <td>{{cpt.solde}}</td>
+   </tr>
+</table>
