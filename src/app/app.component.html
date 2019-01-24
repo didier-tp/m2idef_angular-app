@@ -1,10 +1,16 @@
 <div class="container-fluid">
+<!-- 
 <div style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
 </div>
-<app-myheader></app-myheader>
+-->
+<!--  
+  <app-myheader ></app-myheader>
+  <app-myheader [title]="'coucou'"></app-myheader>
+ -->
+<app-myheader [title]="title"></app-myheader>
 
 <router-outlet></router-outlet> 
 <!-- router-outlet sera automatiquement
