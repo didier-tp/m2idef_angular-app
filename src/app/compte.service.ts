@@ -44,11 +44,11 @@ export class CompteService {
     //http://localhost:8080/appliSpringBoot selon le
     //fichier proxy.conf.json (ng serve --proxy-config ...)
     return this.http.get<Compte[]>(urlWs)
-                  /*  .pipe(
+                  .pipe(
                         map(tab => tab.sort(
-                          (c1,c2)=>c1.solde-c2.solde
+                                         (c1,c2)=>c1.solde-c2.solde
                         ))
-                    ); */
+                    ); 
     //depuis la version 4.3 de angular , http.post<T>
     //ou bien http.get<T> renvoie un resultat de type Observable<T>
   }

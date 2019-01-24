@@ -33,8 +33,8 @@ export class CompteComponent implements OnInit {
   }
 
   recupererListeComptes(){
-    this.compteService/*.getComptesViaWsRest()*/
-                      .getComptesSimu()
+    this.compteService.getComptesViaWsRest()
+                      /*.getComptesSimu()*/
                       .subscribe( (tabCpt) => { this.tabComptes=tabCpt;} ,
                                   (error) => { console.log(error);} );
   }
