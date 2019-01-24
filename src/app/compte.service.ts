@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Compte } from './compte';
-import { Observable } from 'rxjs';
+import { Observable ,of } from 'rxjs';
+import { map } from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,15 @@ export class CompteService {
         //ou bien http.get<T> renvoie un resultat de type Observable<T>
   }
 
+  public getComptesSimu(): Observable<Compte[]> {
+    let tabCpt = [ 
+      { numero : 33 , label : "cpt 33" , solde : 33.33 },
+      { numero: 44, label: "cpt 44", solde: 44.44 }
+    ];
+    return of(tabCpt); //anciennement Observable.of(...)
+    //avec import { Observable ,of } from 'rxjs'; en V6 , V7
+  }
+
   public getComptesViaWsRest(): Observable<Compte[]> {
     //appel WS REST:
     let urlWs = "./rest/compte";
@@ -33,7 +43,12 @@ export class CompteService {
     //et qui sera préfixée par
     //http://localhost:8080/appliSpringBoot selon le
     //fichier proxy.conf.json (ng serve --proxy-config ...)
-    return this.http.get<Compte[]>(urlWs);
+    return this.http.get<Compte[]>(urlWs)
+                  /*  .pipe(
+                        map(tab => tab.sort(
+                          (c1,c2)=>c1.solde-c2.solde
+                        ))
+                    ); */
     //depuis la version 4.3 de angular , http.post<T>
     //ou bien http.get<T> renvoie un resultat de type Observable<T>
   }
