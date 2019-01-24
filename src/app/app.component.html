@@ -4,14 +4,11 @@
     Welcome to {{ title }}!
   </h1>
 </div>
-<hr />
-<app-compte></app-compte>
-<hr />
-<app-tva></app-tva>
-<!-- selector du sous composant tva qui sera imbriqué ici -->
-<hr />
-<app-emprunt></app-emprunt>
-<!-- selector du sous composant emprunt qui sera imbriqué ici -->
-<hr />
-<router-outlet></router-outlet> <!-- pour future navigation -->
+<app-myheader></app-myheader>
+
+<router-outlet></router-outlet> 
+<!-- router-outlet sera automatiquement
+     remplacé par app-basic ou app-compte ou ...
+    selon la route courante  -->
+<app-myfooter></app-myfooter>
 </div>

@@ -9,12 +9,18 @@ import { EmpruntComponent } from './emprunt/emprunt.component';
 import { CompteComponent } from './compte/compte.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CompteService } from './compte.service';
+import { MyheaderComponent } from './myheader/myheader.component';
+import { MyfooterComponent } from './myfooter/myfooter.component';
+import { BasicComponent } from './basic/basic.component';
 @NgModule({
   declarations: [
     AppComponent,
     TvaComponent,
     EmpruntComponent,
-    CompteComponent
+    CompteComponent,
+    MyheaderComponent,
+    MyfooterComponent,
+    BasicComponent
   ],
   imports: [
     BrowserModule,
