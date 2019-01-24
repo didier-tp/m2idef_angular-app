@@ -34,7 +34,8 @@ export class CompteComponent implements OnInit {
 
   recupererListeComptes(){
     this.compteService.getComptesViaWsRest()
-                      .subscribe( (tabCpt) => { this.tabComptes=tabCpt;})
+                      .subscribe( (tabCpt) => { this.tabComptes=tabCpt;} ,
+                                  (error) => { console.log(error);} );
   }
 
   ngOnInit() {
