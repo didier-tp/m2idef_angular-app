@@ -48,7 +48,7 @@ export class CompteService {
                         map(tab => tab.sort(
                                          (c1,c2)=>c1.solde-c2.solde
                         ))
-                    ); 
+                  ); //avec import { map } from "rxjs/operators";
     //depuis la version 4.3 de angular , http.post<T>
     //ou bien http.get<T> renvoie un resultat de type Observable<T>
   }
