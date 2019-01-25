@@ -1,4 +1,5 @@
 <div class="container-fluid">
+  <div class="cadre">
 <!-- 
 <div style="text-align:center">
   <h1>
@@ -12,9 +13,13 @@
  -->
 <app-myheader [title]="title"></app-myheader>
 
-<router-outlet></router-outlet> 
-<!-- router-outlet sera automatiquement
-     remplacé par app-basic ou app-compte ou ...
-    selon la route courante  -->
+<div style="margin:5px">
+  <router-outlet></router-outlet> 
+  <!-- router-outlet sera automatiquement
+       remplacé par app-basic ou app-compte ou ...
+      selon la route courante  -->
+</div>
+
 <app-myfooter></app-myfooter>
+</div>
 </div>

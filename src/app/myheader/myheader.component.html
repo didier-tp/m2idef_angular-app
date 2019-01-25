@@ -1,9 +1,16 @@
  
-<bsu-nav-bar [brandTitle]="title" [menuDefs]="myMenuDefs"></bsu-nav-bar>
-<hr/>
-<div class="entete">  myheader Angular <b>{{title}}</b> ...
+
+
+<div class="entete">
+  <div style="margin:3px">  
+      <bsu-nav-bar [brandTitle]="title" [menuDefs]="myMenuDefs"></bsu-nav-bar>
+  </div>
+  <div> 
+     myheader <b>{{title}}</b> ...
     <a [routerLink]="['/basic']" >basic</a> ...
-    <input type="button" [routerLink]="['/compte']" value="compte" />...
+    <a [routerLink]="['/compte']">compte</a>
+    <!-- <input type="button" [routerLink]="['/compte']" value="compte" /> -->...
     <a [routerLink]="['/preference']">preference</a> ...
     {{commonService.humeur}}
+  </div>
 </div>
