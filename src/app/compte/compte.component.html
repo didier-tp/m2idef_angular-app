@@ -25,6 +25,7 @@
         <td>{{cpt.numero}}</td>
         <td>{{cpt.label}}</td>
         <td>{{cpt.solde}}</td>
-        <td><a (click)="onSupprimer(cpt.numero)">supprimer</a></td>
+        <td><input type="button" value="supprimer"
+                (click)="onSupprimer(cpt.numero)" /></td>
    </tr>
 </table>
