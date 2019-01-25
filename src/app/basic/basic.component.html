@@ -1,3 +1,25 @@
-<app-tva></app-tva>
-<hr/>
-<app-emprunt></app-emprunt>
+<!--
+    <ngb-tabset>
+    <ngb-tab title="tva">
+        <ng-template ngbTabContent>
+            <app-tva></app-tva>
+        </ng-template>
+    </ngb-tab>
+    <ngb-tab title="emprunt">
+        <ng-template ngbTabContent>
+            <app-emprunt></app-emprunt>
+        </ng-template>
+    </ngb-tab>
+</ngb-tabset>
+-->
+   
+<div>
+    <bsu-toggle-panel [title]="'tva'">
+        <app-tva></app-tva>
+    </bsu-toggle-panel>
+    <p></p>
+    <bsu-toggle-panel [title]="'emprunt'">
+        <app-emprunt></app-emprunt>
+    </bsu-toggle-panel>
+</div>
+

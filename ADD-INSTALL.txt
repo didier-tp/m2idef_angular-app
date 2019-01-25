@@ -1,0 +1,50 @@
+npm install --save boostrap
+npm install --save font-awesome
+-----------
+npm install --save @ng-bootstrap/ng-bootstrap
+
+et ajouter dans app.module.ts
+
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+
+@NgModule({
+  ...
+  imports: [NgbModule, ...],
+  ...
+})
+export class AppModule {
+}
+
+===================
+recopier 
+
+.ng-valid[required] {
+border-left: 5px solid #42A948; /* green */
+}
+.ng-invalid {
+border-left: 5px solid #a94442; /* red */
+}
+
+.my-bg-primary {
+	background-color: #499de5!important;  
+}
+dans style.css
+------
+recopier les répertoires
+    bs-util et directives
+de  
+  T:\Salles de Formation\Salle 20\Organisation du Cours par Fairouz\Didier Defrance\
+  JS_TS_ANGULAR\pour_angular6+_et_ngBootStrap
+vers 
+    my-app/src
+
+-----
+ajouter 
+BsUtilModule dans les imports [] de app.module.ts
+----
+essayer (dans basic ou ...):
+ <bsu-toggle-panel [title]="'tva'">
+        <app-tva></app-tva>
+    </bsu-toggle-panel>
+
+

@@ -12,6 +12,8 @@ import { CompteService } from './compte.service';
 import { MyheaderComponent } from './myheader/myheader.component';
 import { MyfooterComponent } from './myfooter/myfooter.component';
 import { BasicComponent } from './basic/basic.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BsUtilModule } from 'src/bs-util/bs-util.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,8 @@ import { BasicComponent } from './basic/basic.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, FormsModule, HttpClientModule
+    AppRoutingModule, FormsModule, HttpClientModule,
+    NgbModule, BsUtilModule
   ],
   providers: [CompteService],
   bootstrap: [AppComponent]
