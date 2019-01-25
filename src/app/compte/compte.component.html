@@ -19,10 +19,12 @@
         <th>numero</th>
         <th>label</th>
         <th>solde</th>
+        <th>action</th>
   </tr>
    <tr *ngFor="let cpt of tabComptes">
         <td>{{cpt.numero}}</td>
         <td>{{cpt.label}}</td>
         <td>{{cpt.solde}}</td>
+        <td><a (click)="onSupprimer(cpt.numero)">supprimer</a></td>
    </tr>
 </table>

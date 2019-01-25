@@ -32,6 +32,12 @@ export class CompteComponent implements OnInit {
     // sous forme de lambda (alias "arrow function").
   }
 
+  onSupprimer(numCpt : number){
+    this.compteService.deleteCompteViaWsRest(numCpt)
+      .subscribe((ok)=>{ this.message="compte " + numCpt + " supprime"; } ,
+                 (error) => { this.message = error } );
+  }
+
   recupererListeComptes(){
     this.compteService.getComptesViaWsRest()
                       /*.getComptesSimu()*/

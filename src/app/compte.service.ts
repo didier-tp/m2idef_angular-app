@@ -12,6 +12,12 @@ export class CompteService {
 
   constructor(private http: HttpClient) { }
 
+  public deleteCompteViaWsRest(numCpt : number) : Observable<any>{
+    //appel WS REST:
+    let urlWs = "./rest/compte/"+numCpt;
+    return this.http.delete(urlWs);
+  }
+
   public postCompteViaWsRest(compte : Compte) : Observable<Compte> {
     //appel WS REST:
     let urlWs = "./rest/compte";
