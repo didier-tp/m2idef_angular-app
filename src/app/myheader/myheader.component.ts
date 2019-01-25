@@ -12,9 +12,22 @@ export class MyheaderComponent implements OnInit {
   @Input()
   title : string ="titre par defaut";
 
-  constructor(public commonService: CommonService) { }
+  constructor(public commonService: CommonService) {
+   }
 
   ngOnInit() {
+    //via .subscribe(...) appelé ici sur un "behaviorSubject" Observable
+    //on enregistre ici une callback (liste de traitements)
+    //qui sera automatiquement appelée dès que la valeur du "behaviorSubject"
+    //changera (appel à .next() indirectement déclenché par un autre composant)
+    this.commonService.bsHumeur.subscribe(
+      (nouvelleHumeur) => {
+        console.log("humeur=" + nouvelleHumeur);
+        //éventuels autres traitements 
+        //....
+        //alert(nouvelleHumeur);
+      }
+    );
   }
 
   myMenuDefs: MenuDefinition[] = [
