@@ -42,7 +42,7 @@ duree :<input [(ngModel)]="calculEmprunt.duree" />
 <div class="form-group row">
     <label  class="control-label col-sm-3">mensualite :</label>
     <div class="col-sm-9">
-         {{calculEmprunt.mensualite}} 
+         {{calculEmprunt.mensualite | number : '.2-2' }} 
     </div>
 </div>
 </form>
