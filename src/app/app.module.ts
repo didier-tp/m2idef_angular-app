@@ -14,6 +14,8 @@ import { MyfooterComponent } from './myfooter/myfooter.component';
 import { BasicComponent } from './basic/basic.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BsUtilModule } from 'src/bs-util/bs-util.module';
+import { PreferenceComponent } from './preference/preference.component';
+import { CommonService } from './common.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,14 +24,15 @@ import { BsUtilModule } from 'src/bs-util/bs-util.module';
     CompteComponent,
     MyheaderComponent,
     MyfooterComponent,
-    BasicComponent
+    BasicComponent,
+    PreferenceComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, FormsModule, HttpClientModule,
     NgbModule, BsUtilModule
   ],
-  providers: [CompteService],
+  providers: [CompteService,CommonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MenuDefinition } from 'src/bs-util/data/MenuDefinition';
+import { CommonService } from './../common.service';
 
 @Component({
   selector: 'app-myheader',
@@ -11,23 +12,25 @@ export class MyheaderComponent implements OnInit {
   @Input()
   title : string ="titre par defaut";
 
+  constructor(public commonService: CommonService) { }
+
+  ngOnInit() {
+  }
+
   myMenuDefs: MenuDefinition[] = [
     {
       label: "MyDropDownMenu1",
       children: [
-        { label: "menu-item-basic", path: "basic" },
-        { label: "menu-item-compte", path: "compte" },
+        { label: "basic", path: "basic" },
+        { label: "compte", path: "compte" },
         { divider: true },
-        { label: "menu-item-basic", path: "basic" }
+        { label: "preference", path: "preference" }
       ]
     },
-    { label: "menu-item-basic", path: "basic" },
-    { label: "menu-item-compte", path: "compte" }
+    { label: "basic", path: "basic" },
+    { label: "compte", path: "compte" }
   ];
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  
 
 }
