@@ -1,8 +1,8 @@
 <h3>calcul mensualite emprunt</h3>
 <form  class="form-horizontal">
 <div class="form-group row">
-    <label for="montant" class="control-label col-sm-4" >montant :</label>
-    <div class="col-sm-8">
+    <label for="montant" class="control-label col-sm-3" >montant :</label>
+    <div class="col-sm-9">
       <input name="montant" [(ngModel)]="calculEmprunt.montant"
             [class.positif]="calculEmprunt.montant > 0"
             [class.negatif]="calculEmprunt.montant < 0" />
@@ -13,29 +13,35 @@
 <!--
 duree :<input [(ngModel)]="calculEmprunt.duree" /> 
 -->
-<label for="duree" class="control-label col-sm-4">duree : </label>
-   <div class="col-sm-8">
+<label for="duree" class="control-label col-sm-3">duree : </label>
+   <div class="col-sm-9">
     <select name="duree" [(ngModel)]="calculEmprunt.duree">
       <option *ngFor="let i of [1,2,3,4,5,6,8,10,12,15,20]">{{i}}</option>
    </select> 
    </div>
 </div>
+<!--
 <div class="form-group row">
-   <label for="taux" class="control-label col-sm-4">taux:</label>
-    <div class="col-sm-8">
+   <label for="taux" class="control-label col-sm-3">taux:</label>
+    <div class="col-sm-9">
         <input name="taux" [(ngModel)]="calculEmprunt.taux" /> 
     </div>
 </div>
+-->
+<bsu-my-fg-label label="taux">
+    <input name="taux" [(ngModel)]="calculEmprunt.taux" />
+</bsu-my-fg-label>
+
 <div class="form-group row">
-    <div class="offset-sm-4 col-sm-8">
+    <div class="offset-sm-3 col-sm-9">
         <input type="button" value="calculer mensualite" 
             class="btn btn-primary"
         (click)="calculerEmprunt()" /> 
     </div>
 </div>
 <div class="form-group row">
-    <label  class="control-label col-sm-4">mensualite :</label>
-    <div class="col-sm-8">
+    <label  class="control-label col-sm-3">mensualite :</label>
+    <div class="col-sm-9">
          {{calculEmprunt.mensualite}} 
     </div>
 </div>
