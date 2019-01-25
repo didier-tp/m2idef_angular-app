@@ -34,7 +34,8 @@ export class CompteComponent implements OnInit {
 
   onSupprimer(numCpt : number){
     this.compteService.deleteCompteViaWsRest(numCpt)
-      .subscribe((ok)=>{ this.message="compte " + numCpt + " supprime"; } ,
+      .subscribe((ok)=>{ this.message="compte " + numCpt + " supprime"; 
+                         this.recupererListeComptes();} ,
                  (error) => { this.message = error } );
   }
 
